@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://www.24serpnya.com.ua/sitemap.xml

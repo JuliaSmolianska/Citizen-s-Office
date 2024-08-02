@@ -1,0 +1,156 @@
+@font-face {
+  font-family: e-Ukraine-Head;
+  src: url(../../styles/e-UkraineHead-Medium.ttf);
+}
+@font-face {
+  font-family: e-Ukraine-Light;
+  src: url(../../styles/e-Ukraine-Light.ttf);
+}
+.footerBox {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-radius: 4px;
+  padding: 3%;
+  color: #ffffff;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  @media screen and (max-width: 767px) {
+    width: 100%;;
+    padding: 5% 7%;
+    align-items: center;
+  }
+}
+.iconsGroup {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  height: 40px;
+  flex-wrap: wrap;
+}
+.text1 {
+  font-size: 24px;
+  padding-bottom: 0;
+  line-height: 28px;
+  font-family: e-Ukraine-Head;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+.text2 {
+
+  font-size: 16px;
+  line-height: 20px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+.support {
+  background-color: #d7eeff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  min-height: 35px;
+  margin: auto;
+  color: #000;
+  transition: all 500ms;
+  line-height: 20px;
+  border: 1px solid #d7eeff;
+  text-align: center;
+  position: relative;
+  font-size: 16px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
+}
+.copy {
+  cursor: pointer;
+  margin-top: 15px;
+  display: flex;
+  transition: all 500ms;
+  justify-content: center;
+}
+.copy:hover {
+  text-decoration: underline;
+  color: #1888fa;
+}
+.copied {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 20px;
+  z-index: 3;
+  width: 250px;
+  height: 75px;
+  padding: 15px;
+  align-items: center;
+}
+.laws {
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: -15px;
+  @media screen and (min-width: 768px) {
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    position: absolute;
+    bottom: 5px;
+    margin-bottom: 0;
+  }
+}
+
+.footerLink {
+  position: relative;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 26px;
+}
+
+.footerLink::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s ease;
+}
+
+.footerLink:hover::before {
+  transform: scaleX(1);
+}
+
+.footerLinkSecondary {
+
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footerLinkSecondary::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s ease;
+}
+
+.footerLinkSecondary:hover::before {
+  transform: scaleX(1);
+}

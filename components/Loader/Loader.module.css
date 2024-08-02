@@ -1,0 +1,196 @@
+.root {
+  --white-color: #fff;
+  --black-color: #000;
+  --grey-color: #a5a5a5;
+  --blue-color: #1888fa;
+  --yellow-color: #ffdb4d;
+}
+
+@font-face {
+  font-family: Sign;
+  src: url(../../styles/SignPainter.ttc);
+}
+
+.loaderContainer {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white-color);
+  width: 100%;
+  height: 100%;
+}
+
+.loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.imageContainer {
+  border-width: 1px;
+  border-left-color: var(--blue-color);
+  border-top-color: var(--blue-color);
+  border-right-color: var(--yellow-color);
+  border-bottom-color: var(--yellow-color);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-size: cover;
+  animation: changeBackground 5s ease-in-out infinite;
+}
+
+.innerCircle {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  border-radius: 50%;
+  animation: rotate2 3s linear infinite;
+}
+
+.outerCircle {
+  position: absolute;
+  top: 50%;
+  left: -15%;
+  border-radius: 50%;
+  animation: rotate1 2s linear infinite;
+}
+
+.innerCircle {
+  width: 120px;
+  height: 120px;
+  border: 1px solid transparent;
+  border-top: 1px solid var(--blue-color);
+  border-bottom: 1px solid var(--yellow-color);
+  z-index: 1;
+  margin-top: -50px;
+}
+
+.outerCircle {
+  width: 150px;
+  height: 150px;
+  border: 1px solid transparent;
+  border-top: 1px solid var(--blue-color);
+  border-bottom: 1px solid var(--yellow-color);
+  z-index: 0;
+  margin-top: -75px;
+}
+
+.loaderImage {
+  opacity: 1;
+}
+
+.fadeTransition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loaderImage.fadeOut {
+  opacity: 0;
+}
+
+.quote {
+  max-width: 340px;
+  display: block;
+  margin-bottom: 0;
+  line-height: 18px;
+  text-align: justify;
+  font-family: Sign;
+  margin-top: 30px;
+  font-size: 18px;
+    text-align: center;
+  color: var(--black-color);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: type 4s steps(60) infinite;
+}
+
+.reversedLetter {
+  display: inline-block;
+  margin-left: -3px;
+  transform: scaleX(-1.1) rotate(-30deg);
+}
+
+.author {
+
+  font-size: 12px;
+  font-family: 'Montserat';
+
+
+  margin-left: 250px;
+
+}
+
+@keyframes changeBackground {
+  0%,
+  100% {
+    background-image: url('../../public/loader/Old.jpg');
+    filter: drop-shadow(0 0 8px var(--grey-color));
+  }
+  50% {
+    background-image: url('../../public/loader/Young.jpg');
+    filter: drop-shadow(0 0 10px var(--grey-color));
+  }
+}
+
+@keyframes rotate1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate2 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    border-right: 0.7px solid var(--black-color);
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote {
+    font-size: 15px;
+  }
+
+  .author {
+    font-size: 13px;
+    margin-left: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  .quote {
+    font-size: 14px;
+  }
+
+  .author {
+    font-size: 12px;
+    margin-left: 150px;
+  }
+}

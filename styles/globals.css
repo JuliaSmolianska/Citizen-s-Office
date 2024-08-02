@@ -1,0 +1,463 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: e-Ukraine-Light;
+  src: url(./e-Ukraine-Light.ttf);
+}
+@font-face {
+  font-family: e-Ukraine-Medium;
+  src: url(./e-Ukraine-Medium.ttf);
+}
+@font-face {
+  font-family: e-Ukraine-Regular;
+  src: url(./e-Ukraine-Regular.ttf);
+}
+@font-face {
+  font-family: e-Ukraine-Head;
+  src: url(./e-UkraineHead-Medium.ttf);
+}
+
+:root {
+  --background: #ffffff;
+  --primary: #1888fa;
+  --secondary: #ffdb4d;
+}
+
+body {
+  background-color: var(--background);
+  padding-inline: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: e-Ukraine-Regular;
+  @media screen and (min-width: 860px) and (max-width: 1199px) {
+    padding-inline: 4%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.map {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .map {
+    right: 0;
+  }
+}
+
+.container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 5px auto;
+  height: auto;
+  transition: height 1s all;
+  @media screen and (max-width: 767px) {
+    max-width: 400px;
+  }
+}
+
+.btnPrimary {
+  background-color: #d7eeff;
+  border-radius: 5px;
+  padding: 5px 20px;
+  min-height: 35px;
+  margin: auto 10px;
+  color: #1888fa;
+  transition: all 500ms;
+  line-height: 20px;
+  border: 1px solid #d7eeff;
+  font-size: 16px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 1199px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 340px) {
+    font-size: 14px;
+    padding: 5px 15px;
+  }
+  @media screen and (min-width: 1199px) {
+    min-width: 212px;
+  }
+}
+.btnPrimary:hover {
+  border: 1px solid #9bccff;
+}
+
+.btnSecondary {
+  border: 1px solid #1889fa00;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin: auto 10px;
+  min-height: 35px;
+  color: #1888fa;
+  transition: all 500ms;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 1199px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 340px) {
+    font-size: 12px;
+  }
+}
+.btnSecondary:hover {
+  border: 1px solid #1888fa;
+}
+.blockFixed {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  min-height: 35px;
+  color: #ffffff;
+  font-size: 14px;
+  border: 1px solid #04c65d;
+  border-radius: 5px;
+  line-height: 16px;
+  text-align: center;
+  transition: all 500ms;
+  font-family: e-Ukraine-Light;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    display: block;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+.btnFixed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #ffffff;
+  color: #04c65d;
+  border-radius: 0 5px 5px 0;
+  transition: all 500ms;
+  border-left: 1px solid #04c65d;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    border-top: 1px solid #04c65d;
+    border-left: none;
+    padding: 5px 30px;
+  }
+}
+.btnFixed:hover {
+  background-color: rgba(4, 198, 93, 0.15);
+}
+.box {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #cde9ff;
+  border-radius: 5px;
+}
+.boxes {
+  border: 1px solid #cde9ff;
+  border-radius: 5px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.boxes.active {
+  max-height: 1000px;
+  opacity: 1;
+  animation: fadeIn 1s forwards;
+}
+
+.boxes.inactive {
+  opacity: 0;
+  animation: fadeOut 1s forwards;
+}
+
+.titlePrimary {
+  color: var(--primary);
+  font-size: 54px;
+  font-family: e-Ukraine-Medium;
+  line-height: 54px;
+  margin: 3% 0;
+}
+
+.titleSecondary {
+  color: var(--secondary);
+  font-size: 54px;
+  font-family: e-Ukraine-Medium;
+  line-height: 54px;
+  margin: 3% 0;
+}
+
+@media (min-width: 768px) and (max-width: 1999px) {
+  .titlePrimary {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .titleSecondary {
+    font-size: 36px;
+    line-height: 36px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .titlePrimary {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .titleSecondary {
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
+
+.list {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: all 500ms;
+  border-left: 5px solid #ffffff;
+  align-items: center;
+  padding: 10px 0;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+.list:hover {
+  background-color: rgba(215, 238, 255, 0.5);
+  border-left: 5px solid var(--primary);
+}
+.discription {
+  width: 50%;
+  padding-left: 3px;
+  padding-right: 5px;
+  line-height: 20px;
+  font-size: 16px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 1199px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.discriptionBold {
+  font-family: e-Ukraine-Regular;
+}
+
+.btnGroup {
+  width: 50%;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  padding-right: 10px;
+  justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  @media screen and (max-width: 768px) and (max-width: 860px) {
+    padding-left: 0;
+    padding-right: 5px;
+  }
+}
+.marked {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  font-family: e-Ukraine-Light;
+  @media screen and (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 15px 5px 0;
+    margin: 5px 0 10px;
+    align-items: center
+  }
+}
+.thanks {
+  max-width: 845px;
+  min-height: 147px;
+  margin: 5% auto;
+  text-align: center;
+  @media screen and (max-width: 767px) {
+    max-width: 400px;
+  }
+}
+.thanksText {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 30px;
+  padding: 1% 5%;
+  font-family: e-Ukraine-Head;
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.btnDonate {
+  border-radius: 4px;
+  padding: 5px 15px;
+  width: 284px;
+  min-height: 70px;
+  margin: auto 10px;
+  color: #734e08;
+  transition: all 500ms;
+  line-height: 20px;
+  border: 2px solid #734e0851;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: e-Ukraine-Medium;
+  background-color: rgba(115, 78, 8, 0.1);
+}
+.btnDonate:hover {
+  border: 2px solid #734e08;
+}
+.btnDonate:active {
+  background-color: rgba(115, 78, 8, 0.3);
+  border: none;
+}
+.donate {
+  position: relative;
+  padding-left: 15px;
+}
+.donateIcon {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+}
+.btnShowInfo {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  font-size: medium;
+  padding-left: 7px;
+}
+.chooseRegion {
+  font-size: 16px;
+  font-family: e-Ukraine-Light;
+  line-height: 20px;
+  padding: 30px 40px;
+  @media screen and (max-width: 767px) {
+    padding: 15px 0;
+  }
+}
+
+.scrollContainer {
+  width: 338px;
+  height: 253px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  margin: 0 auto;
+  padding: 10px;
+  @media screen and (max-width: 767px) {
+    width: 300px;
+    height: 253px;
+    border: none;
+    padding: 10px 0;
+  }
+}
+
+.scrollContent {
+  padding: 10px 30px;
+  width: 100%;
+}
+.select {
+  height: 40px;
+  border-bottom: 2px solid #eaeaea;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  transition: all 500ms;
+}
+.select:hover {
+  color: #1888fa;
+}
+.isSelected {
+  height: 40px;
+  border-bottom: 2px solid #eaeaea;
+  align-items: center;
+  color: #1888fa;
+  display: flex;
+}
+.select:last-child,
+.isSelected:last-child {
+  border-bottom: none;
+}
+.disabled {
+  height: 40px;
+  border-bottom: 2px solid #eaeaea;
+  align-items: center;
+  display: flex;
+  color: gray; /* or any other color to indicate disabled state */
+  pointer-events: none;
+  opacity: 0.5;
+}
+.doneSelectedTitle {
+  font-size: 24px;
+  line-height: 28px;
+  color: #04c65d;
+  font-family: e-Ukraine-Medium;
+  text-align: center;
+  margin: 25px 0;
+}
+
+.detailsBox {
+  margin-top: 30px;
+  padding: 5px 25px;
+  max-height: 580px;
+  overflow-y: auto;
+  font-family: e-Ukraine-Light;
+  font-size: 16px;
+  color: #4c4c4c;
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+    padding: 0 20px;
+    max-height: 450px;
+  }
+}
+.detailsText {
+  margin: 10px 0;
+}
+.detailsBlueBlock {
+  color: #007eff;
+  font-family: e-Ukraine-Medium;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,110 @@
+.root {
+    --title-color: #007EFF;
+    --text-color: rgba(0, 0, 0, 0.71);
+    --white-color: #fff;
+    --btn-color: #1888fa;
+    --btnBg-color: #d7eeff;
+    --btnBox-shadow: rgba(0, 0, 2, 0.2);
+    --btnBorder-none: #ffffff00;
+
+    --hover-time: .5s;
+  }
+
+@font-face {
+    font-family: e-Ukraine-Light;
+    src: url(../../styles/e-Ukraine-Light.ttf);
+}
+
+.mission_wrapper {
+    padding: 15px 70px;
+    display: flex;
+    justify-content: flex-start;
+    font-family: e-Ukraine-Light;
+    min-width: 300px;
+    max-width: 1080px;
+    margin: 0 auto;
+    height: auto;
+
+}
+
+.title {
+    color: var(--title-color);
+    font-size: 77px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.order {
+    display: block;
+    list-style-type: disc;
+}
+
+.order_item {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 25px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+
+.scrollButton {
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--btn-color);
+    color: var(--white-color);
+    border: 1px solid var(--btnBorder-none);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px var(--btnBox-shadow);
+    transition: all var(--hover-time) ease;
+  }
+  
+  .scrollButton:hover {
+    background-color: var(--btnBg-color);
+    color: var(--btn-color);
+    border: 1px solid var(--btn-color);
+  }
+
+@media (max-width: 768px) {
+    .mission_wrapper {
+        padding: 20px 50px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 37px;
+        padding-bottom: 20px;
+    }
+
+    .order_item{
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .mission_wrapper {
+        padding: 10px 30px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 33px;
+    }
+
+    .order_item{
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .scrollButton  {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+

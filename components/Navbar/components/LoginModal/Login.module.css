@@ -1,0 +1,279 @@
+.root {
+  --backdrop-color: rgba(0, 0, 0, 0.5);
+  --white-color: #fff;
+  --grey-text-color: #4C4C4C;
+  --link-color: #008AFF;
+  --input-border: #A5A5A5;
+  --input-placeholder: #AEAFBC;
+  --placeholder-icon: blue;
+  --error-text: #F5101E;
+  --btn-color: #0090FF;
+  --info-text: #FF6000;
+  --register-color: #006BBE;
+  --flag-blue:#1888fa;
+  --flag-yellow: #ffdb4d;
+
+  --hover-time: .5s;
+}
+
+@font-face {
+  font-family: e-Ukraine-Light;
+  src: url(../../../../styles/e-Ukraine-Light.ttf);
+}
+
+@font-face {
+  font-family: e-Ukraine-Medium;
+  src: url(../../../../styles/e-Ukraine-Medium.ttf);
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--backdrop-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .flag {
+    padding: 0;
+    display: block;
+    border-radius: 8px 0px 0px 8px;
+    height: 50px;
+    min-width: 10px;
+    background: linear-gradient(to bottom, var(--flag-blue) 50%, var(--flag-yellow) 50%);
+    margin-right: 3px;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .modalContent {
+    font-family: e-Ukraine-Light;
+    background: var(--white-color);
+    padding: 50px;
+    border-radius: 5px;
+    width: 50vw;
+    min-height: 617px;
+    position: relative;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .loginTitle {
+    color: var(--grey-text-color);
+    padding-bottom: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .loginText {
+    color: var(--grey-text-color);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 40px;
+  }
+
+  .loginLink {
+    position: relative;
+    color: var(--link-color);
+    transition: color var(--hover-time);
+  }
+  
+  .loginLink::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--link-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--hover-time) ease;
+  }
+  
+  .loginLink:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .inputContainer {
+    position: relative;
+    border: 1px solid var(--input-border);
+    margin-bottom: 10px;
+    max-width: 300px;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    padding-right: 30px;
+    box-sizing: border-box;
+    transition: all var(--hover-time);
+    font-size: 13px;
+  }
+
+  .input:focus {
+    outline: none;
+  }
+
+  .input::placeholder {
+    transition: all var(--hover-time);
+    font-size: 12px;
+    color: var(--input-placeholder);
+  }
+  
+  .input:focus::placeholder {
+    transform: translateY(-13px);
+    font-size: 10px;
+  }
+  
+  .placeholderIcon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background: var(--placeholder-icon);
+    border-radius: 50%;
+  }
+  
+  .error {
+    font-size: 10px;
+    line-height: 15px;
+    color: var(--error-text);
+    margin-bottom: 10px;
+  }
+
+  .submitBtn {
+    color: var(--white-color);
+    background-color: var(--btn-color);
+    border: 1px solid var(--white-color);
+    border-radius: 3px;
+    margin-bottom: 10px;
+
+    transition: all var(--hover-time);
+  }
+
+  .submitBtn:hover {
+    color: var(--btn-color);
+    background-color: var(--white-color);
+    border: 1px solid var(--btn-color);
+  }
+  
+  .infoText {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--info-text);
+    margin-bottom: 10px;
+  }
+
+  .registerLink {
+    position: relative;
+    color: var(--register-color);
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  .registerLink::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--register-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--hover-time) ease;
+  }
+  
+  .registerLink:hover::before {
+    transform: scaleX(1);
+  }
+
+  .emailText {
+    font-family: e-Ukraine-Medium;
+    color: #000;
+  }
+
+  .checkCode {
+    max-width: 300px;
+  }
+  
+  @media (min-width: 800px) {
+    .submitBtn {
+      min-width: 300px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .submitBtn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 710px) {
+    .title  {
+      font-size: 14px;
+    }
+
+    .modalContent {
+      width: 90vw;
+    }
+
+    .loginTitle{
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+
+    .loginText {
+      font-size: 10px;
+      padding-bottom: 20px;
+    }
+
+    .inputContainer {
+      min-width: 100%;
+    }
+  }
+
+  @media (min-width: 651px) {
+    .submitBtn {
+      padding: 10px 60px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .submitBtn {
+      padding: 10px 10px;
+    }
+    .checkCode {
+      max-width: 260px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .modalBackdrop {
+      align-items: flex-start;
+    }
+  }

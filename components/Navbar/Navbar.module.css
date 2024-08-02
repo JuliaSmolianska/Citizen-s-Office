@@ -1,0 +1,183 @@
+.root {
+  --white-color: #fff;
+  --boxSh-color: rgba(0, 0, 0, 0.2);
+  --flag-yellow: #ffdb4d;
+  --flag-blue:#1888fa;
+  --moveLine-color: #4c4c4c;
+
+  --hover-time: .5s;
+}
+
+@font-face {
+  font-family: e-Ukraine-Light;
+  src: url(../../styles/e-Ukraine-Light.ttf);
+}
+
+@font-face {
+  font-family: e-Ukraine-Medium;
+  src: url(../../styles/e-Ukraine-Medium.ttf);
+}
+
+@font-face {
+  font-family: e-Ukraine-Regular;
+  src: url(../../styles/e-Ukraine-Regular.ttf);
+}
+
+.navbarBox {
+  min-width: 300px;
+  max-width: 1080px;
+  height: auto;
+  background: var(--white-color);
+  border-radius: 8px;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0 0 15px var(--boxSh-color);
+  position: sticky;
+  top: 0px;
+  overflow: hidden;
+  z-index: 1;
+
+  @media screen and (max-width: 1199px) {
+    line-height: 15px;
+  }
+  @media screen and (max-width: 400px) {
+    padding-right: 0;
+  }
+}
+
+.navbar_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 3% 10px 3%;
+}
+
+.flag {
+  padding: 0;
+  display: block;
+  border-radius: 8px 0px 0px 8px;
+  height: 50px;
+  width: 10px;
+  background: linear-gradient(to bottom, var(--flag-blue) 50%, var(--flag-yellow) 50%);
+  margin-right: 3px;
+}
+.title {
+  font-size: 20px;
+  margin: 0 auto;
+  font-family: e-Ukraine-Head;
+  line-height: 24px;
+
+  @media screen and (min-width: 401px) and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 5px;
+  }
+
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 5px;
+  }
+}
+.btnMobile {
+  @media screen and (max-width: 380px) {
+    font-size: 12px;
+    padding: 5px;
+    margin: 0;
+  }
+}
+
+.buttonPWA {
+  margin-left: 170px;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #d7eeff;
+  gap: 5px;
+  width: 170px;
+  height: 40px;
+  font-family: e-Ukraine-Light;
+  font-size: 10px;
+  font-weight: 400;
+  display: flex;
+  border: 1px solid #d7eeff;
+  border-radius: 8px;
+
+  transition: all .5s;
+}
+
+.buttonPWA:hover {
+  border: 1px solid #9bccff;
+  color: #4C4C4CCC;
+  ;
+}
+
+.imagePWA {
+  transition: all .5s;
+}
+
+.buttonPWA:hover .imagePWA {
+  opacity: 0.8;
+}
+
+@media (max-width:1199px) {
+  .buttonPWA {
+    display: none;
+  }
+}
+
+
+.marquee {
+ max-width: 99%;
+ margin: 0 auto;
+ overflow: hidden;
+ padding-bottom: 5px;
+}
+
+.marquee_wrapper {
+  display: flex;
+  width: 410%;
+  animation: marquee_infinite 30s linear infinite;
+}
+
+.marquee_text {
+  padding-right: 10px;
+  font-family: e-Ukraine-light;
+  font-size: 11px;
+  font-weight: 300;
+  width: 80%;
+  text-wrap: nowrap;
+}
+
+@keyframes marquee_infinite {
+  0% {
+    transform: translate(0%);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .marquee_wrapper {
+    width: 405%;
+    animation: marquee_infinite 60s linear infinite;
+  }
+  .marquee_text {
+    font-size: 8px;
+    font-weight: 300;
+    width: 100%;
+    text-wrap: nowrap;
+  }
+
+  .navbar_wrapper {
+    margin: 20px 3% 5px 3%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .marquee_wrapper {
+    width: 405%;
+    animation: marquee_infinite 20s linear infinite;
+  }
+}

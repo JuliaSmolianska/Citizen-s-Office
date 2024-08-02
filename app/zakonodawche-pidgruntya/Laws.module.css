@@ -1,0 +1,86 @@
+@font-face {
+  font-family: e-Ukraine-Light;
+  src: url(../../styles/e-Ukraine-Light.ttf);
+}
+.container {
+  max-width: 1080px;
+  width: 100%;
+  margin: 5px auto;
+  height: auto;
+  transition: height 1s all;
+  font-family: e-Ukraine-Light;
+  text-align: justify;
+}
+
+.title {
+  color: #007eff;
+  font-size: 77px;
+  line-height: 80px;
+  font-weight: 700;
+  text-align: center;
+}
+.heading {
+  margin-bottom: 10px;
+  font-size: x-large;
+  line-height: 28px;
+}
+
+.content {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.list {
+  list-style-type: circle;
+  padding-left: 10px;
+  margin-left: 30px;
+}
+
+.scrollButton {
+  position: fixed;
+  z-index: 2;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1888fa;
+  color: #fff;
+  border: 1px solid #ffffff00;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 2, 0.2);
+  transition: all 500ms ease;
+}
+
+.scrollButton:hover {
+  background-color: #d7eeff;
+  color: #1888fa;
+  border: 1px solid #1888fa;
+}
+
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+    font-size: 37px;
+    line-height: 40px;
+  }
+  .list {
+    margin-left: 15px;
+  }
+  .content {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .container {
+    padding: 0 2%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 320px) {
+  .title {
+    text-align: center;
+    font-size: 33px;
+  }
+}
